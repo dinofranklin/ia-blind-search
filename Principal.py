@@ -16,7 +16,11 @@ class City:
         self.childs = childs
         self.depth = depth
         self.distance = distance
-
+#
+# representação muito (muito) específica
+# com relação à profundidade com Arad
+# e com o destino (sempre Bucareste)
+        
 
 eforie = City("Eforie", None, 6, 86)
 neamt = City("Neamt", None, 7, 87)
@@ -69,6 +73,11 @@ def getMinDistance(city):
         if(child.distance < minChild.distance ):
             minChild = child
     return minChild
+
+# a busca em superfície não funciona corretamente
+# vide resposta para partida em 'sibiu'
+# ['Sibiu', 'Rimnicu Vilcea', 'Fagaras', 'Craiova', 'Pitesti']
+# a resposta deve ser a soluçao - somente o caminho da solução 
 
 def breadthSearch(firstCity):
     queue = deque([firstCity])
